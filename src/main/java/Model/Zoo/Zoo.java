@@ -3,10 +3,11 @@ package Model.Zoo;
 import Model.Animal.Animal;
 import Model.Animal.ComparatorAge;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Zoo implements Animal {
+public class Zoo implements Animal, Serializable {
     public List<Animal> animals;
 
 
@@ -50,6 +51,9 @@ public class Zoo implements Animal {
 
         }
         return lol.toString();
+    }
+    public List<Animal> getZoo() {
+        return animals;
     }
 
     @Override

@@ -32,6 +32,9 @@ public class Console implements View {
         System.out.println("GoodBye!");
         work = false;
     }
+    public void save(){
+        presenter.save();
+    }
     public void showZoo(){
         System.out.println(presenter.showToys());
     }

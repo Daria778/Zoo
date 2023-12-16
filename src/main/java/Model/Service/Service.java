@@ -25,7 +25,14 @@ public class Service {
         this.file = new FileHandler<>();
     }
 
-
+    public void save() {
+        try {
+            file.fileWDToys(zoo);
+            System.out.println("The animals have been added");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public String showZoo(){
         try{
             zoo = file.fileRToys();
@@ -61,14 +68,8 @@ public class Service {
             Hamster hamster = new Hamster(name, birthdate);
             zoo.add(hamster);
         }
-        try {
-            file.fileWDToys(zoo);
-            System.out.println("Animals have been added");
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }
-
     }
+
     public void addCommand(String name, String command){
         zoo.addCommand(name, command);
 

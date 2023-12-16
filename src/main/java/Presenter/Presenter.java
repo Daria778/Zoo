@@ -17,6 +17,9 @@ public class Presenter {
     public void addAnimal(String name, String type, LocalDate birthdate){
         service.addAnimal(name, type, birthdate);
     }
+    public void save(){
+        service.save();
+    }
     public String showToys(){
         return service.showZoo();
     }

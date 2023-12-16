@@ -23,7 +23,7 @@ public class FileHandler<E> implements Workable<E>, Serializable{
     public void fileWDToys(Zoo zoo) throws IOException {
         boolean flag = false;
 
-        File file = new File("toys.data");
+        File file = new File("animals.data");
         ObjectOutputStream oos = null;
         try {
             FileOutputStream fos = new FileOutputStream(file);
@@ -31,6 +31,7 @@ public class FileHandler<E> implements Workable<E>, Serializable{
                 oos = new ObjectOutputStream(fos);
                 oos.writeObject(zoo);
                 flag = true;
+                System.out.println(zoo.getZoo().size());
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -43,7 +44,7 @@ public class FileHandler<E> implements Workable<E>, Serializable{
 
     @Override
     public Zoo fileRToys() {
-        File file = new File("toys.data");
+        File file = new File("animals.data");
         ObjectInputStream ois = null;
         try {
             FileInputStream fis = new FileInputStream(file);
@@ -60,7 +61,7 @@ public class FileHandler<E> implements Workable<E>, Serializable{
             } catch (IOException e ) {
                 System.out.println("Something is wrong");
             } catch (NullPointerException e){
-                System.out.println("There are no toys");
+                System.out.println("There are no animals");
             }
         }
             throw new RuntimeException("failed");

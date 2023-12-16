@@ -13,6 +13,7 @@ public class Menu {
         itemList.add(new AddAnimal(console));
         itemList.add(new AddCommand((console)));
         itemList.add(new SortByAge((console)));
+        itemList.add(new Save((console)));
         itemList.add(new Finish((console)));
 
     }
